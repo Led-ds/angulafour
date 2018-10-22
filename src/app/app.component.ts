@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'poc-example';
+  title = 'Meu primeiro teste com Angular 4!';
 }
