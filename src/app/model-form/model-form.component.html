@@ -1,0 +1,49 @@
+
+<p-dialog header="Cadastro de Pedido" [(visible)]="display" [modal]="true" 
+          [responsive]="true" [width]="700" [minWidth]="150" [minHeight]="500"
+          [minY]="100" [maximizable]="true" [baseZIndex]="11000">
+
+          <form #frm="ngForm" (ngSubmit)="adicionar(frm)">
+            <div class="ui-g">
+              <div class="ui-g-12 ui-sm-12 ui-fluid">
+                <label></label>
+                <p-dropdown id="tipoOS" name="tipoOS"
+                        [autoWidth]="false" placeholder="Selecione um tipo de serviço..."
+                        [options]="tipoOSs" optionLabel="descricao"
+                        [(ngModel)]="pedido.tipoOS"
+                        required></p-dropdown>      
+              </div>
+          
+              <div class="ui-g-12 ui-sm-12 ui-fluid">
+                <label></label>
+                <p-dropdown id="endereco" name="endereco"
+                        [autoWidth]="false" placeholder="Selecione um endereço..."
+                        [options]="enderecos" optionLabel="enderecoCompleto"
+                        [(ngModel)]="pedido.endereco"
+                        required></p-dropdown>      
+              </div>
+          
+              <div class="ui-g-12 ui-sm-12 ui-fluid">
+                <textarea id="observacao" placeholder="Observação..." [rows]="10" [cols]="30" pInputTextarea autoResize="autoResize" 
+                   name="observacao" [(ngModel)]="pedido.observacao"></textarea>
+              
+              </div>
+            
+              <p-footer style="margin-top: 50px;height: 26px;width: 650px;">
+                  <div style="margin-left: 440px;" >
+                      <button type="submit" style=" width: 91px; height: 30px; right: 33px; left: -32;" 
+                        pButton icon="pi pi-check" label="Criar"></button>
+
+                      <button pButton icon="pi pi-times" 
+                      type="button" style="width: 102px; height: 30px; right: 15px;" 
+                      label="Cancelar"></button>
+                  </div>          
+              </p-footer>             
+            </div>
+          </form>
+</p-dialog>
+
+<div style="text-align: right;width: 1270px;height: 25px;" >
+    <button type="text" (click)="showDialog()" pButton icon="pi pi-plus-circle" label="Novo Pedido">
+    </button>
+</div>
